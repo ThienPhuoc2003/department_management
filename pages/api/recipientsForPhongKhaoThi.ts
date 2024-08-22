@@ -1,3 +1,4 @@
+// pages/api/recipientsForPhongKhaoThi.ts
 import type { NextApiRequest, NextApiResponse } from "next";
 import { connectMongoDB } from "../../lib/mongodb";
 import User from "../../models/user";
@@ -13,7 +14,7 @@ export const getData = async () => {
   await connectMongoDB();
 
   const recipients = (await User.find(
-    { role: "truongBoMon" },
+    { role: "giaoVuKhoa" },
     "-password"
   ).lean()) as Recipient[];
 
@@ -32,10 +33,10 @@ export default async function handler(
     return res.status(500).json({ message: "Failed to connect to MongoDB" });
   }
 
-  // Fetching recipients with the role 'truongBoMon'
+  // Fetching recipients with the role 'giaoVuKhoa'
   try {
     const recipients = (await User.find(
-      { role: "truongBoMon" },
+      { role: "giaoVuKhoa" },
       "-password"
     ).lean()) as Recipient[];
     res.status(200).json(recipients);

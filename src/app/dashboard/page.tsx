@@ -9,13 +9,13 @@ const Dashboard = () => {
       await signOut({ redirect: true, callbackUrl: "/" });
     } catch (error) {
       console.error("Error signing out:", error);
-      // Optionally, handle errors in UI, e.g., show a notification
+     
     }
   };
   
 
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex h-screen w-screen overflow-hidden">
       <Sidebar />
       <div className="flex-1 p-10">
        

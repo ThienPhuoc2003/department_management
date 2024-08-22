@@ -80,6 +80,7 @@ const RegisterForm: NextPage = () => {
                     <input name="password" onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Mật khẩu" className="input" />
                     <select name="role" onChange={(e) => setRole(e.target.value)} className="input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <option value="">Vai trò</option>
+                        <option value="phongKhaoThi">Phòng khảo thí</option>
                         <option value="giaoVuKhoa">Giáo vụ khoa</option>
                         <option value="truongBoMon">Trưởng bộ môn</option>
                         <option value="giangVien">Giảng viên</option>
